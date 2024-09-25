@@ -1,44 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Tip calculator app</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 
-  Bill
-
-  Select Tip %
-  5%
-  10%
-  15%
-  25%
-  50%
-  Custom
-
-  Number of People
-
-  Tip Amount
-  / person
-
-  Total
-  / person
-
-  Reset
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+    <title>Tip calculator app</title>
+    <link rel="stylesheet" href="./assets/sass/main.scss" />
+    <script src="./index.js" type="module"></script>
+    <!-- <script src="./form.js"></script> -->
+  </head>
+  <body class="page">
+    <main class="content">
+      <h1 class="title text-dark">
+        <span class="title__text">S</span>
+        <span class="title__text">P</span>
+        <span class="title__text">L</span>
+        <span class="title__text">I</span>
+        <span class="title__text">T</span>
+        <span class="title__text">T</span>
+        <span class="title__text">E</span>
+        <span class="title__text">R</span>
+      </h1>
+      <article class="card">
+        
+        <form class="form">
+          <div class="form__field">
+            <input type="number" class="form__input text-large" value="0" id="bill"><label class="form__label form__label_bill text-gray">Bill</label><span class="form__error form__error-bill"></span></input>
+          </div>
+          <div class="form__field">
+              <div class="form__tips">
+                <button class="button button_dark text-large" value="5">5%</button>
+                <button class="button button_dark text-large" value="10">10%</button>
+                <button class="button button_selected text-large" value="15">15%</button>
+                <button class="button button_dark text-large" value="25">25%</button>
+                <button class="button button_dark text-large" value="50">50%</button>
+                <input class="form__input text-large text-dark text-large" placeholder="Custom " type="number" id="custom"></input>
+              </div>
+          </div>
+          <div class="form__field">
+            <input type="number" class="form__input text-dark text-large" value="0" id="people"><label class="form__label form__label_people text-gray">Number of people</label><span class="form__error form__error-people"></span></input>
+          </div>
+        </form>
+        <div class="card__results">
+          <div class="card__amounts-container">
+            <div class="card__amount">
+              <p class="text-white">Tip Amount<br/><span class="text-gray text-small">/ person</span></p>
+              <p id="final-tip" class="text-cyan text-xlarge">$00.00</p>
+            </div>
+            <div class="card__amount">
+              <p class="text-white">Total<br/><span class="text-gray text-small">/ person</span></p>
+              <p id="final-total" class="text-cyan text-xlarge">$00.00</p>
+            </div>
+          </div>
+          <button class="button button_light" id="reset">RESET</button>
+        </div>
+      </article>
+    </main>
+  </body>
 </html>

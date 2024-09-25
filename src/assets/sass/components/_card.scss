@@ -1,0 +1,50 @@
+@use "../utils/colours" as *;
+@use "../utils/mixins" as *;
+
+.card {
+  background-color: white;
+  padding-inline: 2rem;
+  padding-block: 1rem;
+  border-radius: 2rem 2rem 0 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+
+  @include respond-to("medium") {
+    max-width: 48rem;
+    margin: 1rem;
+    padding-block-end: 2rem;
+    border-radius: 2rem 2rem;
+  }
+
+  @include respond-to("large") {
+    max-width: 58rem;
+    height: auto;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    padding: 3rem;
+  }
+
+  &__results {
+    background-color: $very-dark-cyan;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    @include respond-to("large") {
+      padding-inline: 2rem;
+    }
+  }
+
+  &__amounts-container {
+    padding-top: 1rem;
+  }
+
+  &__amount {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+  }
+}

@@ -1,0 +1,25 @@
+@use "../utils/colours" as *;
+
+.button {
+  background-color: $very-light-grayish-cyan;
+  color: $very-dark-cyan;
+  border-radius: 0.3rem;
+  border: none;
+  height: 3rem;
+  width: 100%;
+
+  &_dark {
+    background-color: $very-dark-cyan;
+    color: white;
+  }
+
+  &_light,
+  &_selected {
+    background-color: $strong-cyan;
+  }
+
+  &:hover {
+    background-color: lighten($strong-cyan, 30%);
+    color: $very-dark-cyan;
+  }
+}
