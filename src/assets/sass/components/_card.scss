@@ -4,8 +4,9 @@
 .card {
   background-color: white;
   padding-inline: 2rem;
-  padding-block: 1rem;
-  border-radius: 2rem 2rem 0 0;
+  padding-block-start: 1rem;
+  padding-block-end: 2rem;
+  border-radius: 2rem;
   display: grid;
   grid-template-columns: 1fr;
   gap: 1.5rem;
